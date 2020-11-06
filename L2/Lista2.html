@@ -14660,7 +14660,7 @@ d) old = 0.0 new = -0.004296342842280865
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>W Float64 różnice są już widoczne. Dla algorytmu c) i d) są one zauważalne, natomiast dla algorytmów a) i b) są one relatywnie duże i wynoszą aż 7 rzędów różnicy. Oznacza to, że takie zadanie jest źle uwarunkowane, ponieważ niewielka zmiana danych potrafi wygenerować znaczące różnice w wynikach. Powodem tego jest szybkie narastanie błędu w trakcie wykonywania ciągu obliczeń.</p>
+<p>W Float64 różnice są już widoczne. Dla algorytmu c) i d) są one zauważalne, natomiast dla algorytmów a) i b) są one relatywnie duże i wynoszą aż 7 rzędów różnicy. Oznacza to, że takie zadanie jest źle uwarunkowane, ponieważ niewielka zmiana danych potrafi wygenerować znaczące różnice w wynikach. Powodem tego jest szybkie narastanie błędu w trakcie wykonywania ciągu obliczeń. Oznacza to, że taki proces numeryczny jest niestabliny.</p>
 
 </div>
 </div>
@@ -14671,7 +14671,7 @@ d) old = 0.0 new = -0.004296342842280865
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>W zadaniu zostanie sprawdzona zgodność wyników, przedstawionych na wykresach, w p</p>
+<p>W zadaniu zostanie sprawdzona zgodność wykresu podanej funkcji z wyliczoną ręcznie granicą.</p>
 
 </div>
 </div>
@@ -15141,7 +15141,7 @@ rank = 19;
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[7]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">Polynomials</span> <span class="c">#v1.1.10</span>
@@ -15167,7 +15167,7 @@ rank = 19;
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[8]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">P_coefficients</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">210.0</span><span class="p">,</span> <span class="mf">20615.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1256850.0</span><span class="p">,</span>
@@ -15194,7 +15194,7 @@ rank = 19;
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[8]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[12]:</div>
 
 
 
@@ -15230,10 +15230,16 @@ rank = 19;
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Wielomian $P(x)$ wygenerowany przy użyciu biblioteki Polynomials:</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[9]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">P</span> <span class="o">=</span> <span class="n">Polynomial</span><span class="p">(</span><span class="n">P_coefficients</span><span class="p">[</span><span class="mi">21</span><span class="o">:-</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">])</span>
@@ -15252,7 +15258,7 @@ rank = 19;
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[9]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
 
 
 
@@ -15266,10 +15272,16 @@ rank = 19;
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Pierwiastki tego wielomianu:</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[10]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">P_roots</span> <span class="o">=</span> <span class="n">roots</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
@@ -15288,7 +15300,7 @@ rank = 19;
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[10]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[14]:</div>
 
 
 
@@ -15323,13 +15335,21 @@ rank = 19;
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Wielomian $p(x)$ (matematycznie równoważny) w postaci iloczynowej:</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[11]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">fromroots</span><span class="p">([</span><span class="kt">Float64</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">20</span><span class="p">])</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">function</span> <span class="n">p</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">1.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">2.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">3.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">4.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">6.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">7.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">8.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">9.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">10.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">11.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">12.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">13.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">14.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">15.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">16.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">17.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">18.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">19.0</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mf">20.0</span><span class="p">)</span>
+<span class="k">end</span>
 </pre></div>
 
      </div>
@@ -15345,12 +15365,13 @@ rank = 19;
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[11]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-2.43290200817664e18 &#45; 8.7529480367616e18&#8729;x &#43; 1.3803759753640704e19&#8729;x<sup>2</sup> &#45; 1.2870931245150988e19&#8729;x<sup>3</sup> &#43; 8.037811822645052e18&#8729;x<sup>4</sup> &#45; 3.599979517947607e18&#8729;x<sup>5</sup> &#43; 1.2066478037803732e18&#8729;x<sup>6</sup> &#45; 3.1133364316139066e17&#8729;x<sup>7</sup> &#43; 6.30308120992949e16&#8729;x<sup>8</sup> &#45; 1.014229986551145e16&#8729;x<sup>9</sup> &#43; 1.307535010540395e15&#8729;x<sup>10</sup> &#45; 1.3558518289953e14&#8729;x<sup>11</sup> &#43; 1.1310276995381e13&#8729;x<sup>12</sup> &#45; 7.561111845e11&#8729;x<sup>13</sup> &#43; 4.017177163e10&#8729;x<sup>14</sup> &#45; 1.67228082e9&#8729;x<sup>15</sup> &#43; 5.3327946e7&#8729;x<sup>16</sup> &#45; 1.25685e6&#8729;x<sup>17</sup> &#43; 20615.0&#8729;x<sup>18</sup> &#45; 210.0&#8729;x<sup>19</sup> &#43; 1.0&#8729;x<sup>20</sup>
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>p (generic function with 1 method)</pre>
 </div>
 
 </div>
@@ -15362,7 +15383,7 @@ rank = 19;
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[12]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">20</span>
@@ -15390,26 +15411,26 @@ rank = 19;
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>k = 1; |P(z_k)| = 35696.50964788257; |p(z_k)| = 36720.50964788227; |z_k - k| = 3.0109248427834245e-13
-k = 2; |P(z_k)| = 176252.60026668405; |p(z_k)| = 192636.60026691604; |z_k - k| = 2.8318236644508943e-11
-k = 3; |P(z_k)| = 279157.6968824087; |p(z_k)| = 362101.69687113096; |z_k - k| = 4.0790348876384996e-10
-k = 4; |P(z_k)| = 3.0271092988991085e6; |p(z_k)| = 2.7649652999648857e6; |z_k - k| = 1.626246826091915e-8
-k = 5; |P(z_k)| = 2.2917473756567076e7; |p(z_k)| = 2.2277473671348542e7; |z_k - k| = 6.657697912970661e-7
-k = 6; |P(z_k)| = 1.2902417284205095e8; |p(z_k)| = 1.2769707122070245e8; |z_k - k| = 1.0754175226779239e-5
-k = 7; |P(z_k)| = 4.805112754602064e8; |p(z_k)| = 4.780526156335614e8; |z_k - k| = 0.00010200279300764947
-k = 8; |P(z_k)| = 1.6379520218961136e9; |p(z_k)| = 1.6337585675856934e9; |z_k - k| = 0.0006441703922384079
-k = 9; |P(z_k)| = 4.877071372550003e9; |p(z_k)| = 4.870348427548107e9; |z_k - k| = 0.002915294362052734
-k = 10; |P(z_k)| = 1.3638638195458128e10; |p(z_k)| = 1.362843071072106e10; |z_k - k| = 0.009586957518274986
-k = 11; |P(z_k)| = 3.585631295130865e10; |p(z_k)| = 3.584087897760478e10; |z_k - k| = 0.025022932909317674
-k = 12; |P(z_k)| = 7.533332360358197e10; |p(z_k)| = 7.531256581876213e10; |z_k - k| = 0.04671674615314281
-k = 13; |P(z_k)| = 1.9605988124330817e11; |p(z_k)| = 1.9602984002587503e11; |z_k - k| = 0.07431403244734014
-k = 14; |P(z_k)| = 3.5751347823104315e11; |p(z_k)| = 3.574748406282602e11; |z_k - k| = 0.08524440819787316
-k = 15; |P(z_k)| = 8.21627123645597e11; |p(z_k)| = 8.215740477766903e11; |z_k - k| = 0.07549379969947623
-k = 16; |P(z_k)| = 1.5514978880494067e12; |p(z_k)| = 1.5514314565843672e12; |z_k - k| = 0.05371328339202819
-k = 17; |P(z_k)| = 3.694735918486229e12; |p(z_k)| = 3.6946500070912217e12; |z_k - k| = 0.025427146237412046
-k = 18; |P(z_k)| = 7.650109016515867e12; |p(z_k)| = 7.650001670877033e12; |z_k - k| = 0.009078647283519814
-k = 19; |P(z_k)| = 1.1435273749721195e13; |p(z_k)| = 1.14351402511197e13; |z_k - k| = 0.0019098182994383706
-k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - k| = 0.00019070876336257925
+<pre>k = 1; |P(z_k)| = 35696.50964788257; |p(z_k)| = 36626.4254824228; |z_k - k| = 3.0109248427834245e-13
+k = 2; |P(z_k)| = 176252.60026668405; |p(z_k)| = 181303.9336725767; |z_k - k| = 2.8318236644508943e-11
+k = 3; |P(z_k)| = 279157.6968824087; |p(z_k)| = 290172.2858891687; |z_k - k| = 4.0790348876384996e-10
+k = 4; |P(z_k)| = 3.0271092988991085e6; |p(z_k)| = 2.04153729027509e6; |z_k - k| = 1.626246826091915e-8
+k = 5; |P(z_k)| = 2.2917473756567076e7; |p(z_k)| = 2.0894625006962176e7; |z_k - k| = 6.657697912970661e-7
+k = 6; |P(z_k)| = 1.2902417284205095e8; |p(z_k)| = 1.1250484577562997e8; |z_k - k| = 1.0754175226779239e-5
+k = 7; |P(z_k)| = 4.805112754602064e8; |p(z_k)| = 4.5729086427309465e8; |z_k - k| = 0.00010200279300764947
+k = 8; |P(z_k)| = 1.6379520218961136e9; |p(z_k)| = 1.5556459377357383e9; |z_k - k| = 0.0006441703922384079
+k = 9; |P(z_k)| = 4.877071372550003e9; |p(z_k)| = 4.68781617564839e9; |z_k - k| = 0.002915294362052734
+k = 10; |P(z_k)| = 1.3638638195458128e10; |p(z_k)| = 1.2634601896949207e10; |z_k - k| = 0.009586957518274986
+k = 11; |P(z_k)| = 3.585631295130865e10; |p(z_k)| = 3.3001284744984142e10; |z_k - k| = 0.025022932909317674
+k = 12; |P(z_k)| = 7.533332360358197e10; |p(z_k)| = 7.388525665404987e10; |z_k - k| = 0.04671674615314281
+k = 13; |P(z_k)| = 1.9605988124330817e11; |p(z_k)| = 1.84762150931442e11; |z_k - k| = 0.07431403244734014
+k = 14; |P(z_k)| = 3.5751347823104315e11; |p(z_k)| = 3.551427752842085e11; |z_k - k| = 0.08524440819787316
+k = 15; |P(z_k)| = 8.21627123645597e11; |p(z_k)| = 8.423201558964255e11; |z_k - k| = 0.07549379969947623
+k = 16; |P(z_k)| = 1.5514978880494067e12; |p(z_k)| = 1.5707287366258018e12; |z_k - k| = 0.05371328339202819
+k = 17; |P(z_k)| = 3.694735918486229e12; |p(z_k)| = 3.3169782238892354e12; |z_k - k| = 0.025427146237412046
+k = 18; |P(z_k)| = 7.650109016515867e12; |p(z_k)| = 6.344853141791281e12; |z_k - k| = 0.009078647283519814
+k = 19; |P(z_k)| = 1.1435273749721195e13; |p(z_k)| = 1.2285717366719662e13; |z_k - k| = 0.0019098182994383706
+k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.318309535271639e13; |z_k - k| = 0.00019070876336257925
 </pre>
 </div>
 </div>
@@ -15421,7 +15442,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Otrzymane pierwiastki dają błędne wyniki po podstawieniu do wyjściowego wielomianu (w obu postaciach). Problemem jest fakt, że wyniki nie mogę być dokładnie przechowywane ze względu na ograniczenia arytmetyki Float64. Mimo, że $z_k$ nie różni się znacząco od $k$, to błędy podczas obliczania wartości wielomianu są już znaczące. Ponadto dla coraz większych k, różnice |$z_k$-$k$| rosną, a co za tym idzie rosną błędy obliczonych wartości $P(z_k)$.</p>
+<p>Otrzymane pierwiastki dają błędne wyniki po podstawieniu wielomianów. Problemem jest fakt, że wyniki nie mogę być dokładnie przechowywane ze względu na ograniczenia arytmetyki Float64. Mimo, że $z_k$ nie różni się znacząco od $k$, to błędy podczas obliczania wartości wielomianu są już znaczące. Ponadto dla coraz większych k, różnice |$z_k$-$k$| rosną, a co za tym idzie rosną błędy obliczonych wartości $P(z_k)$.</p>
 
 </div>
 </div>
@@ -15439,7 +15460,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[13]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">Pw_coefficients</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span> <span class="o">!=</span> <span class="mi">2</span> <span class="o">?</span> <span class="n">P_coefficients</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">:</span> <span class="o">-</span><span class="mi">210</span><span class="o">-</span><span class="mi">2</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">23</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">21</span><span class="p">]</span>
@@ -15458,7 +15479,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[13]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
 
 
 
@@ -15497,7 +15518,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">Pw</span> <span class="o">=</span> <span class="n">Polynomial</span><span class="p">(</span><span class="n">Pw_coefficients</span><span class="p">[</span><span class="mi">21</span><span class="o">:-</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="p">])</span>
@@ -15516,7 +15537,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
 
 
 
@@ -15533,7 +15554,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">Pw_roots</span> <span class="o">=</span> <span class="n">roots</span><span class="p">(</span><span class="n">Pw</span><span class="p">)</span>
@@ -15552,7 +15573,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[16]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
 
 
 
@@ -15590,7 +15611,7 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="k">for</span> <span class="n">k</span> <span class="kp">in</span> <span class="mi">1</span><span class="o">:</span><span class="mi">20</span>
@@ -15618,26 +15639,26 @@ k = 20; |P(z_k)| = 2.7924106393680727e13; |p(z_k)| = 2.7923942556843e13; |z_k - 
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>k = 1; |P(z_k)| = 20259.872313418207; |p(z_k)| = 20259.87231341787; |z_k - k| = 1.6431300764452317e-13
-k = 2; |P(z_k)| = 346541.4137593836; |p(z_k)| = 362925.41376118705; |z_k - k| = 5.503730804434781e-11
-k = 3; |P(z_k)| = 2.2580597001197007e6; |p(z_k)| = 2.448523699173658e6; |z_k - k| = 3.3965799062229962e-9
-k = 4; |P(z_k)| = 1.0542631790395478e7; |p(z_k)| = 1.0280487766874775e7; |z_k - k| = 8.972436216225788e-8
-k = 5; |P(z_k)| = 3.757830916585153e7; |p(z_k)| = 4.691967282113626e7; |z_k - k| = 1.4261120897529622e-6
-k = 6; |P(z_k)| = 1.3140943325569446e8; |p(z_k)| = 2.037447840252475e8; |z_k - k| = 2.0476673030955794e-5
-k = 7; |P(z_k)| = 3.939355874647618e8; |p(z_k)| = 1.7130336640684276e9; |z_k - k| = 0.00039792957757978087
-k = 8; |P(z_k)| = 1.184986961371896e9; |p(z_k)| = 1.870372834263971e10; |z_k - k| = 0.007772029099445632
-k = 9; |P(z_k)| = 2.2255221233077707e9; |p(z_k)| = 1.3757961713967935e11; |z_k - k| = 0.0841836320674414
-k = 10; |P(z_k)| = 1.0677921232930157e10; |p(z_k)| = 1.491107673054507e12; |z_k - k| = 0.6519586830380407
-k = 11; |P(z_k)| = 1.0677921232930157e10; |p(z_k)| = 1.491107673054507e12; |z_k - k| = 1.1109180272716561
-k = 12; |P(z_k)| = 3.1401962344429485e10; |p(z_k)| = 3.296740218390893e13; |z_k - k| = 1.665281290598479
-k = 13; |P(z_k)| = 3.1401962344429485e10; |p(z_k)| = 3.296740218390893e13; |z_k - k| = 2.0458202766784277
-k = 14; |P(z_k)| = 2.157665405951858e11; |p(z_k)| = 9.545850646509295e14; |z_k - k| = 2.518835871190904
-k = 15; |P(z_k)| = 2.157665405951858e11; |p(z_k)| = 9.545850646509295e14; |z_k - k| = 2.7128805312847097
-k = 16; |P(z_k)| = 4.850110893921027e11; |p(z_k)| = 2.7421389644464932e16; |z_k - k| = 2.9060018735375106
-k = 17; |P(z_k)| = 4.850110893921027e11; |p(z_k)| = 2.7421389644464932e16; |z_k - k| = 2.825483521349608
-k = 18; |P(z_k)| = 4.557199223869993e12; |p(z_k)| = 4.252503605819883e17; |z_k - k| = 2.4540214463129764
-k = 19; |P(z_k)| = 4.557199223869993e12; |p(z_k)| = 4.252503605819883e17; |z_k - k| = 2.0043294443099486
-k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k - k| = 0.8469102151947894
+<pre>k = 1; |P(z_k)| = 20259.872313418207; |p(z_k)| = 19987.872313406842; |z_k - k| = 1.6431300764452317e-13
+k = 2; |P(z_k)| = 346541.4137593836; |p(z_k)| = 352369.413808796; |z_k - k| = 5.503730804434781e-11
+k = 3; |P(z_k)| = 2.2580597001197007e6; |p(z_k)| = 2.416241558251844e6; |z_k - k| = 3.3965799062229962e-9
+k = 4; |P(z_k)| = 1.0542631790395478e7; |p(z_k)| = 1.126370230029202e7; |z_k - k| = 8.972436216225788e-8
+k = 5; |P(z_k)| = 3.757830916585153e7; |p(z_k)| = 4.475744423806907e7; |z_k - k| = 1.4261120897529622e-6
+k = 6; |P(z_k)| = 1.3140943325569446e8; |p(z_k)| = 2.1421031658039317e8; |z_k - k| = 2.0476673030955794e-5
+k = 7; |P(z_k)| = 3.939355874647618e8; |p(z_k)| = 1.7846173427860644e9; |z_k - k| = 0.00039792957757978087
+k = 8; |P(z_k)| = 1.184986961371896e9; |p(z_k)| = 1.868697217000985e10; |z_k - k| = 0.007772029099445632
+k = 9; |P(z_k)| = 2.2255221233077707e9; |p(z_k)| = 1.3746309775142996e11; |z_k - k| = 0.0841836320674414
+k = 10; |P(z_k)| = 1.0677921232930157e10; |p(z_k)| = 1.4900695352000583e12; |z_k - k| = 0.6519586830380407
+k = 11; |P(z_k)| = 1.0677921232930157e10; |p(z_k)| = 1.4900695352000583e12; |z_k - k| = 1.1109180272716561
+k = 12; |P(z_k)| = 3.1401962344429485e10; |p(z_k)| = 3.2962792355717137e13; |z_k - k| = 1.665281290598479
+k = 13; |P(z_k)| = 3.1401962344429485e10; |p(z_k)| = 3.2962792355717137e13; |z_k - k| = 2.0458202766784277
+k = 14; |P(z_k)| = 2.157665405951858e11; |p(z_k)| = 9.546022365750218e14; |z_k - k| = 2.518835871190904
+k = 15; |P(z_k)| = 2.157665405951858e11; |p(z_k)| = 9.546022365750218e14; |z_k - k| = 2.7128805312847097
+k = 16; |P(z_k)| = 4.850110893921027e11; |p(z_k)| = 2.742106076928478e16; |z_k - k| = 2.9060018735375106
+k = 17; |P(z_k)| = 4.850110893921027e11; |p(z_k)| = 2.742106076928478e16; |z_k - k| = 2.825483521349608
+k = 18; |P(z_k)| = 4.557199223869993e12; |p(z_k)| = 4.25248587652037e17; |z_k - k| = 2.4540214463129764
+k = 19; |P(z_k)| = 4.557199223869993e12; |p(z_k)| = 4.25248587652037e17; |z_k - k| = 2.0043294443099486
+k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743743559997601e18; |z_k - k| = 0.8469102151947894
 </pre>
 </div>
 </div>
@@ -15798,7 +15819,7 @@ k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ostatnie wyniki to 0.25860548 (wersja 1) oraz 1.093568 (wersja 2). Wyniki te znacznie się różnią, ponieważ błąd wynikający z obcięcia po 10 iteracjach, rzutuje na kolejne wyniki, co po przeprowadzeniu całego ciągu operacji daje wynik znacząco odbiegający od wersji 1.</p>
+<p>Ostatnie wyniki to 0.25860548 (wersja 1) oraz 1.093568 (wersja 2). Wyniki te znacznie się różnią, ponieważ błąd wynikający z obcięcia po 10 iteracjach, rzutuje na kolejne wyniki, co po przeprowadzeniu całego ciągu operacji daje wynik znacząco odbiegający od wersji 1. Do momentu obcięcia wyniki są identyczne (co jest zgodne z intuicją), natomiast po obcięciu zaczynają pojawiać się różnice, które stopniowo kumulują się.</p>
 
 </div>
 </div>
@@ -15908,7 +15929,7 @@ k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Ostatnie wyniki to 0.25860548 (Float32) oraz 0.011611238029748606 (Float64). Tym razem różnice w wynikach są spowodowane zastosowaniem różnych arytmetyk, które pozwalają na zapamiętanie różnej liczby cyfr znaczących. Do pewnego momentu różnice te nie są znaczące, jednak wraz z kolejnymi iteracjami błąd ten propaguje się i narasta, dając ostatecznie bardzo różne wyniki. W obu przypadkach mamy do czynienia z niestabilnym procesem numerycznym.</p>
+<p>Ostatnie wyniki to 0.25860548 (Float32) oraz 0.011611238029748606 (Float64). Tym razem różnice w wynikach są spowodowane zastosowaniem różnych arytmetyk, które pozwalają na zapamiętanie różnej liczby cyfr znaczących. Do pewnego momentu różnice te nie są znaczące, jednak wraz z kolejnymi iteracjami błąd ten propaguje się i narasta, dając ostatecznie bardzo różne wyniki. W obu przypadkach a) i b) widzimy efekty niestabilnego procesu numerycznego.</p>
 
 </div>
 </div>
@@ -15925,7 +15946,7 @@ k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">Data</span> <span class="o">=</span> <span class="p">[</span>
@@ -15952,7 +15973,7 @@ k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k 
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
@@ -15974,16 +15995,19 @@ k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k 
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Poniższa procedura generuje i zapisuje wykresy funkcji w plikach 1-7.png. Wyświetlany wykres jest jednym z wygenerowanych wykresów. Poniżej znajdują się wczytane wszystkie wykresy oraz ich interpretacja.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-julia"><pre><span></span><span class="c">#Uwaga</span>
-<span class="c">#Funkcja generuje wykresy dla poszczególnych przypadków, nazwy plików nie są zgodne z nazwami plików importowanych</span>
-<span class="c">#do wyświetlenia (niżej) ze względu na standard nazw plików</span>
-<span class="k">using</span> <span class="n">PyPlot</span>
+<div class=" highlight hl-julia"><pre><span></span><span class="k">using</span> <span class="n">PyPlot</span>
 <span class="n">ioff</span><span class="p">()</span>
 <span class="n">iter</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">for</span> <span class="n">data</span> <span class="kp">in</span> <span class="n">Data</span>
@@ -15998,8 +16022,9 @@ k = 20; |P(z_k)| = 8.756386551865696e12; |p(z_k)| = 1.3743593161201708e18; |z_k 
     <span class="n">clf</span><span class="p">()</span>
     <span class="n">title</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
     <span class="n">plot</span><span class="p">(</span><span class="mi">1</span><span class="o">:</span><span class="mi">40</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-    <span class="n">name</span> <span class="o">=</span> <span class="n">string</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s">&quot;.png&quot;</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">string</span><span class="p">(</span><span class="n">iter</span><span class="p">,</span> <span class="s">&quot;.png&quot;</span><span class="p">)</span>
     <span class="n">savefig</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+    <span class="n">iter</span> <span class="o">+=</span> <span class="mi">1</span>
 <span class="k">end</span>
 </pre></div>
 
@@ -16064,19 +16089,25 @@ c = -1.0 x = 0.75
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><img src="m2010.png" alt="">
-<img src="m2020.png" alt="">
-<img src="m2019.png" alt="">
-<img src="m1010.png" alt="">
-<img src="m10m10.png" alt="">
-<img src="m10075.png" alt="">
-<img src="m10025.png" alt=""></p>
+<p>Wykresy:</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Wykresy 1 i 2 reprezentują stałe wartości, wartości na wykresie 3 wahają się w przedziale $[-2.2]$, wykresy 4-7 to regularne oscylacje od -1 do 0. Różne dane wejściowe dla równania rekurencyjnego dają nie tylko różne wyniki, ale też wpływają na popełniane błędy podczas obliczeń. W przypadku 1 i 2 nie ma widocznych błędów, w przypadku 3 wartości zdają się być wręcz losowe, w przypadku 4 i 5 wartości od początku oscylują od 0 do -1, w 6 i 7 dopiero po kilku iteracjach. Z powyższych przypadków jedynie 3. zdaje się być niestablinym z punktu widzenia procesu numerycznego.</p>
+<p><img src="1.png" alt="">
+<img src="2.png" alt="">
+<img src="3.png" alt="">
+<img src="4.png" alt="">
+<img src="5.png" alt="">
+<img src="6.png" alt="">
+<img src="7.png" alt=""></p>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Wykresy 1 i 2 reprezentują stałe wartości, wartości na wykresie 3 wahają się w przedziale $[-2.2]$, wykresy 4-7 to regularne oscylacje od -1 do 0. Różne dane wejściowe dla równania rekurencyjnego dają nie tylko różne wyniki, ale też wpływają na popełniane błędy podczas obliczeń. W przypadku 1 i 2 nie ma widocznych błędów, w przypadku 3 wartości zdają się być wręcz losowe, w przypadku 4 i 5 wartości od początku oscylują od 0 do -1, w 6 i 7 dopiero po kilku iteracjach. Z powyższych przypadków jedynie 3. zdaje się być niestablinym z punktu widzenia procesu numerycznego. W przypadkach 1,2,4,5 wartości są reprezentowane dokładnie, stąd wykresy są od początku stałe lub okresowe. W przypadkach 6,7 wykresy są zgodne z oczekiwanymi granicami i je osiągają, ze względu na skończoną precyjzę.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
